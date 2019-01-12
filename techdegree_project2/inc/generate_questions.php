@@ -3,29 +3,11 @@
 include("questions.php");
 
 // Randomize questions from PHP array
-function randNumbers($questions) {
-    $randomNumbers = $questions[array_rand($questions)];
-    return $randomNumbers;
+shuffle($questions);
+//var_dump ($questions);
+foreach ($questions as $value) {
+  echo $value["leftAdder"];
 }
-
-//$randomQuestion = randNumbers($questions);
-//var_dump($randomQuestion);
-
-// Loop for required number of questions
-
-// Foreach loop that loops through randomized array
-function randQuestions($questions) {
-    $randomQuestion = randNumbers($questions);
-
-    foreach($randomQuestion) {
-          echo $questions["leftAdder"];
-
-    }
-}
-
-
-
-randQuestions($questions);
 
 
 // Get random numbers to add
