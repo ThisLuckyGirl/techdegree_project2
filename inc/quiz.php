@@ -31,35 +31,3 @@
 // else give option to move to next question
 
 // Show score
-
-///////////////////////////////////////////
-
-// start session
-session_start();
-
-if (!isset($_SESSION['questions'])) {
-    include ("inc/questions.php");
-    $_SESSION['questions'] = $questions;
-}
-
-
-if ($_POST)
-    //evaluate answers from 1st question
-    //store answer in session
-    //remove question from session
-}
-
-//$_SESSION['count'] = 1; //counter
-
-if(!isset($_SESSION['count']) || $_SESSION['count'] >= 10) {
-
-   $_SESSION['count'] = 1;
-} else {
-   $_SESSION['count'] += 1;
-}
-
-
-echo "Count " . $_SESSION['count']; //retrieve data
-
-//session_destroy();
-?>
