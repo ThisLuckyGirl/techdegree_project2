@@ -20,15 +20,11 @@ if (!isset($_SESSION['questions'])) {
 }
 
 //retrieve data and display on page for testing
-echo "Count " . $_SESSION['count'];
+//echo "Count " . $_SESSION['count'];
 
 
+//evaluate answers
 
-if ($_POST)
-    //evaluate answers from 1st question
-    //store answer in session
-    //remove question from session
-}
 
 //session_destroy();
 
