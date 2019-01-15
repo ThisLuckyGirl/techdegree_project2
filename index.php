@@ -1,4 +1,4 @@
-<?php include ("inc/generate_questions.php");
+<?php include ("inc/quiz.php");
 
 $buttons = [
 $btnA = $_SESSION['questions'][$_SESSION['count']]["correctAnswer"],
@@ -8,8 +8,7 @@ $btnC = $_SESSION['questions'][$_SESSION['count']]["secondIncorrectAnswer"]
 
 shuffle($buttons);
 
-if($_POST['answer'] == $_SESSION['questions'][$_SESSION['count']-1]["correctAnswer"]) {
-
+if($_POST['answer'] == $_SESSION['questions'][$_SESSION['count']]["correctAnswer"]) {
     echo 'Correct!';
  } else {
     echo 'WRONG!';
@@ -32,7 +31,7 @@ if($_POST['answer'] == $_SESSION['questions'][$_SESSION['count']-1]["correctAnsw
 
     <div class="container">
         <div id="quiz-box">
-            <p class="breadcrumbs">Question <?php echo $_SESSION['count'];?> of 10</p>
+            <p class="breadcrumbs">Question <?php echo $_SESSION['count']+1;?> of 10</p>
             <!--  <?PHP var_dump($_SESSION); ?> -->
             <!-- <p class="quiz">What is 54 + 71?</p>-->
             <p class="quiz"> <?php echo " What is " . $_SESSION['questions'][$_SESSION['count']]["leftAdder"] . "+" . $_SESSION['questions'][$_SESSION['count']]["rightAdder"] . "?"?></p>
