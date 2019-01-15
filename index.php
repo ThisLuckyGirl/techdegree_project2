@@ -8,9 +8,8 @@ $btnC = $_SESSION['questions'][$_SESSION['count']]["secondIncorrectAnswer"]
 
 shuffle($buttons);
 
-if($_POST['answer'] == $_SESSION['questions'][$_SESSION['count']]["correctAnswer"]) {
+if($_POST['answer'] == $_SESSION['questions'][$_SESSION['count']-1]["correctAnswer"]) {
 
-//$_SESSION['questions'][$_SESSION['count']]["correctAnswer"]) {
     echo 'Correct!';
  } else {
     echo 'WRONG!';
@@ -40,9 +39,9 @@ if($_POST['answer'] == $_SESSION['questions'][$_SESSION['count']]["correctAnswer
 
             <form action="index.php" method="post">
                 <input type="hidden" name="id" value="0" />
-                <input type="submit" class="btn" name="answer" value="<?php echo $btnA;?>" />
-                <input type="submit" class="btn" name="answer" value="<?php echo $btnB;?>" />
-                <input type="submit" class="btn" name="answer" value="<?php echo $btnC;?>" />
+                <input type="submit" class="btn" name="answer" value="<?php echo $buttons[0];?>" />
+                <input type="submit" class="btn" name="answer" value="<?php echo $buttons[1];?>" />
+                <input type="submit" class="btn" name="answer" value="<?php echo $buttons[2];?>" />
             </form>
         </div>
     </div>

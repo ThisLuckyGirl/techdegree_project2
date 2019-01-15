@@ -1,8 +1,6 @@
 <?php
 //start session
 session_start();
-// "Call" questions.php file
-include("questions.php");
 
 //session counter
 
@@ -15,7 +13,7 @@ if(!isset($_SESSION['count']) || $_SESSION['count'] >= 10) {
 
 // Get random numbers from questions array
 if (!isset($_SESSION['questions'])) {
-    include ("inc/questions.php");
+    include ("questions.php");
     $_SESSION['questions'] = $questions;
 }
 
