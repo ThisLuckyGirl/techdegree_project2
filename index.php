@@ -8,7 +8,7 @@ $btnC = $_SESSION['questions'][$_SESSION['count']]["secondIncorrectAnswer"]
 
 shuffle($buttons);
 
-if($_POST['answer'] == $_SESSION['questions'][$_SESSION['count']]["correctAnswer"]) {
+if($_POST['answer'] == $_SESSION['questions'][$_SESSION['count']-1]["correctAnswer"]) {
     echo 'Correct!';
  } else {
     echo 'WRONG!';
