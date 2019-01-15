@@ -5,16 +5,16 @@ session_start();
 //session counter
 
 //$_SESSION['count'] = 1; //counter
-if(!isset($_SESSION['count']) || $_SESSION['count'] >= 10) {
+if(!isset($_SESSION['count']) || $_SESSION['count'] >= 9) {
    $_SESSION['count'] = 0;
 } else {
    $_SESSION['count'] += 1;
 }
 
-// Get random numbers from questions array
+// Get numbers from questions array
 if (!isset($_SESSION['questions'])) {
     include ("questions.php");
-    $_SESSION['questions'] = $questions;
+    $questions = $_SESSION['questions'];
 }
 
 //retrieve data and display on page for testing
