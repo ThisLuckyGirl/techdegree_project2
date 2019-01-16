@@ -14,7 +14,7 @@ if(!isset($_SESSION['count']) || $_SESSION['count'] >= 9) {
 // Get numbers from questions array
 if (!isset($_SESSION['questions'])) {
     include ("questions.php");
-    $questions = $_SESSION['questions'];
+    $_SESSION['questions'] = $questions;
 }
 
 //retrieve data and display on page for testing

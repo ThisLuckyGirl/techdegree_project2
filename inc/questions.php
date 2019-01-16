@@ -1,4 +1,5 @@
 <?php
+
 $questions[] =
     [
         "leftAdder" => 3,
