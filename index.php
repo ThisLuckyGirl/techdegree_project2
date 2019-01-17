@@ -25,6 +25,9 @@ include ("inc/quiz.php");
                 <input type="submit" class="btn" name="answer" value="<?php echo $buttons[1];?>" />
                 <input type="submit" class="btn" name="answer" value="<?php echo $buttons[2];?>" />
             </form>
+            </br>
+            </br>
+            </br>
             <p class="quiz"> <?php echo $toast; ?></p>
         </div>
     </div>

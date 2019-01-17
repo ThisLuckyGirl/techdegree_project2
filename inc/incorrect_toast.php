@@ -16,7 +16,11 @@
 
             <form action="../index.php" method="post">
                 <input type="hidden" name="id" value="0" />
-                <input type="submit" class="btn" name="answer" value="Next Question" />
+                <input type="submit" class="btn" name="next" value="Next Question" />
+                <?php if(isset($_POST['next'])) {
+                  header('Location: ../index.php');
+                  exit;
+                }?>
             </form>
         </div>
     </div>

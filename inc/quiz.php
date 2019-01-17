@@ -31,15 +31,23 @@ shuffle($buttons);
 
 if(!empty($_POST['answer'])) {
   if($_POST['answer'] == $_SESSION['questions'][$_SESSION['count']-1]["correctAnswer"]) {
-    $toast = 'That is correct!';
+    $toast = 'That was correct!';
     //header('Location: /inc/toast.php');
+    //exit;
  } else {
-    $toast = "Sorry, that is incorrect." . "<br>" . "The correct answer is " . $_SESSION['questions'][$_SESSION['count']]["correctAnswer"];
+    $toast = "Sorry, that was incorrect." . "<br>" .
+    $_SESSION['questions'][$_SESSION['count']-1]["leftAdder"] .
+    "+" . $_SESSION['questions'][$_SESSION['count']-1]["rightAdder"] .
+    "=" . "<strong>" . $_SESSION['questions'][$_SESSION['count']-1]["correctAnswer"] . "<strong>";
     //header('Location: /inc/incorrect_toast.php');
+    //exit;
 }
 }
 
-
+if($_SESSION['count'] == 10) {
+  header('Location: /inc/scorecard.php');
+  exit;
+}
 
 
 

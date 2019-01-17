@@ -11,15 +11,17 @@
 
     <div class="container">
         <div id="quiz-box">
-            <p class="quiz"> That is correct! </p>
+            <p class="quiz"> Here is your score! </p>
           <!--  <p class="quiz"> <?php include("quiz.php"); echo "The correct answer is " . $_SESSION['questions'][$_SESSION['count']]["correctAnswer"]; ?></p> -->
 
             <form action="../index.php" method="post">
                 <input type="hidden" name="id" value="0" />
-                <input type="submit" class="btn" name="next" value="Next Question" />
-                <?php if(isset($_POST['next'])) {
+                <input type="submit" class="btn" name="home" value="Retake Quiz" />
+                <?php if(isset($_POST['home'])) {
+                  unset($_SESSION['count']);
                   header('Location: ../index.php');
                   exit;
+
                 }?>
             </form>
         </div>
