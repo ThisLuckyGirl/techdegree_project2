@@ -28,7 +28,7 @@ include ("inc/quiz.php");
             </br>
             </br>
             </br>
-            <p class="quiz"> <?php echo $toast; ?></p>
+            <p class="quiz"> <?php if(isset($toast)) { echo $toast;} ?></p>
         </div>
     </div>
 </body>
