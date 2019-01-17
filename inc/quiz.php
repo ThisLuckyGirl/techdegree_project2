@@ -1,30 +1,52 @@
 <?php
 //start session
 session_start();
-
+include ("questions.php");
 //session counter
 
 //$_SESSION['count'] = 1; //counter
 if(!isset($_SESSION['count']) || $_SESSION['count'] >= 9) {
    $_SESSION['count'] = 0;
-} else {
-   $_SESSION['count'] += 1;
+   shuffle($questions);
+   $_SESSION['questions'] = $questions;
+//} else {
+   //$_SESSION['count'] += 1;
+} elseif($_SERVER["REQUEST_METHOD"] == "POST") {
+  $_SESSION['count'] ++;
 }
 
 // Get numbers from questions array
 if (!isset($_SESSION['questions'])) {
-    include ("questions.php");
-    $_SESSION['questions'] = $questions;
+  $_SESSION['questions'] = $questions;
 }
 
-//retrieve data and display on page for testing
-//echo "Count " . $_SESSION['count'];
 
+$buttons = [
+$btnA = $_SESSION['questions'][$_SESSION['count']]["correctAnswer"],
+$btnB = $_SESSION['questions'][$_SESSION['count']]["firstIncorrectAnswer"],
+$btnC = $_SESSION['questions'][$_SESSION['count']]["secondIncorrectAnswer"]
+];
 
-//evaluate answers
+shuffle($buttons);
+
+if(!empty($_POST['answer'])) {
+  if($_POST['answer'] == $_SESSION['questions'][$_SESSION['count']-1]["correctAnswer"]) {
+    $toast = 'That is correct!';
+    //header('Location: /inc/toast.php');
+ } else {
+    $toast = "Sorry, that is incorrect." . "<br>" . "The correct answer is " . $_SESSION['questions'][$_SESSION['count']]["correctAnswer"];
+    //header('Location: /inc/incorrect_toast.php');
+}
+}
+
+if 
+
 
 
 //session_destroy();
+//retrieve data and display on page for testing
+//echo "Count " . $_SESSION['count'];
+
 
 
 /*
