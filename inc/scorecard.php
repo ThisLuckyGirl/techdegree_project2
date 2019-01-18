@@ -1,3 +1,8 @@
+<?php
+//start session
+session_start();
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -6,14 +11,13 @@
     <link href='https://fonts.googleapis.com/css?family=Playfair+Display:400,400italic,700,700italic' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="../css/normalize.css">
     <link rel="stylesheet" href="../css/styles.css">
+    <style> body {background-color: lightblue;} </style>
 </head>
 <body>
 
     <div class="container">
         <div id="quiz-box">
             <p class="quiz"><?php
-                //start session
-                session_start();
                 //display appropriate toast for last question answered
                 if($_SESSION["isCorrect"] == "right") {
                     echo "Your last answer was correct!";

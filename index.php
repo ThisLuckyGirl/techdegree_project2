@@ -11,6 +11,7 @@ include ("inc/quiz.php");
     <link href='https://fonts.googleapis.com/css?family=Playfair+Display:400,400italic,700,700italic' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="css/normalize.css">
     <link rel="stylesheet" href="css/styles.css">
+    <style> body {background-color: lightblue;} </style>
 </head>
 <body>
 
@@ -28,8 +29,7 @@ include ("inc/quiz.php");
                 <input type="submit" class="btn" name="answer" value="<?php echo $buttons[2];?>" />
             </form>
             </br>
-            </br>
-            </br>
+
             <!--display "toasts" to user -->
             <p class="quiz"> <?php if(isset($toast)) { echo $toast;} ?></p>
         </div>
